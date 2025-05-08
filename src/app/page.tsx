@@ -1,103 +1,151 @@
-import Image from "next/image";
+import Link from 'next/link';
+import {Github, Linkedin, Instagram} from 'lucide-react';
+
+const projects = [
+    {
+        title: 'Machine Learning on the Edge',
+        description: 'ML-Powered Room Occupancy Tracking System for University Campuses',
+        githubLink: 'https://github.com/ethan-id/sddec25-05-mirror'
+    },
+    {
+        title: 'Find Your Park',
+        description: 'Explore all National Parks designated by the National Park Services.',
+        githubLink: 'https://github.com/ethan-id/find-your-park'
+    },
+    {
+        title: 'Dinder',
+        description: "Get matched with local restaurants based on your preferences or your group's.",
+        githubLink: 'https://github.com/ethan-id/dinder'
+    },
+    {
+        title: 'Scrabble Search',
+        description: 'Search across 170k+ valid Scrabble words, see their point values, and calculate scores.',
+        githubLink: 'https://github.com/ethan-id/scrabble-search'
+    },
+    {
+        title: 'BizGlimpse',
+        description:
+            'Get a glimpse of any publicly traded company via its ticker symbol, and chat with ChatGPT about the data.',
+        githubLink: 'https://github.com/ethan-id/BizGlimpse'
+    }
+];
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    return (
+        <main className='bg-[#0a192f] text-white min-h-screen font-sans flex'>
+            {/* Hero Section - Sticky Left Column */}
+            <section className='hidden lg:flex w-1/2 h-screen flex-col justify-center items-start px-10 md:px-20 sticky top-0'>
+                <p className='text-[#64ffda] mb-2 text-sm md:text-base'>Hi, my name is</p>
+                <h1 className='text-4xl md:text-7xl font-bold text-white mb-4'>Ethan Hancock.</h1>
+                <h2 className='text-3xl md:text-6xl font-bold text-gray-400 mb-6'>I build software.</h2>
+                <p className='max-w-xl text-gray-400 text-base md:text-lg'>
+                    I'm a software engineer focused on building accessible, performant, and beautiful web and backend
+                    systems. Currently I'm a senior at Iowa State University and a SWE Intern at Corteva Agriscience.
+                </p>
+                <div className='mt-8 flex space-x-4'>
+                    <Link
+                        href='https://github.com/ethan-id'
+                        className='text-gray-400 hover:text-[#64ffda]'
+                    >
+                        <Github size={24} />
+                    </Link>
+                    <Link
+                        href='https://www.linkedin.com/in/hancockethan/'
+                        className='text-gray-400 hover:text-[#64ffda]'
+                    >
+                        <Linkedin size={24} />
+                    </Link>
+                    <Link
+                        href='https://www.instagram.com/ethan.idfk/'
+                        className='text-gray-400 hover:text-[#64ffda]'
+                    >
+                        <Instagram size={24} />
+                    </Link>
+                </div>
+            </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+            {/* Scrollable Content - Right Column */}
+            <div className='w-full lg:w-1/2 h-screen overflow-y-scroll'>
+                {/* Experience Section */}
+                <section
+                    id='experience'
+                    className='px-10 md:px-20 py-20'
+                >
+                    <h2 className='text-3xl font-semibold text-[#64ffda] mb-6'>Experience</h2>
+                    <div className='space-y-8'>
+                        <div>
+                            <h3 className='text-xl font-bold text-white'>
+                                Software Engineer Intern · Corteva Agriscience
+                            </h3>
+                            <span className='text-sm text-gray-400'>May 2025 – Aug 2025</span>
+                            <p className='mt-2 text-gray-300'>
+                                Incoming Software Engineer Intern at Corteva Agriscience.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className='text-xl font-bold text-white'>
+                                Part-Time Student Software Engineer Apprentice · John Deere
+                            </h3>
+                            <span className='text-sm text-gray-400'>May 2021 – May 2025</span>
+                            <p className='mt-2 text-gray-300'>
+                                Worked on various software engineering projects as a part-time student apprentice.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className='text-xl font-bold text-white'>Software Engineering Intern · ProMax</h3>
+                            <span className='text-sm text-gray-400'>Jan 2020 – Apr 2020</span>
+                            <p className='mt-2 text-gray-300'>
+                                Assisted in developing software solutions during internship tenure.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Projects Section */}
+                <section
+                    id='projects'
+                    className='px-10 md:px-20 py-20'
+                >
+                    <h2 className='text-3xl font-semibold text-[#64ffda] mb-6'>Projects</h2>
+                    <div className='grid md:grid-cols-2 gap-8'>
+                        {projects.map((project) => (
+                            <div
+                                key={project.title}
+                                className='bg-[#112240] p-6 rounded-lg shadow-md'
+                            >
+                                <h3 className='text-xl font-semibold text-white'>{project.title}</h3>
+                                <p className='text-gray-300 my-2'>{project.description}</p>
+                                <a
+                                    href={project.githubLink}
+                                    className='text-[#64ffda] hover:underline'
+                                >
+                                    View source on GitHub
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Education Section */}
+                <section
+                    id='education'
+                    className='px-10 md:px-20 py-20'
+                >
+                    <h2 className='text-3xl font-semibold text-[#64ffda] mb-6'>Education</h2>
+                    <div>
+                        <h3 className='text-xl font-bold text-white'>
+                            B.S. Software Engineering · Iowa State University
+                        </h3>
+                        <span className='text-sm text-gray-400'>Aug 2021 – Dec 2025</span>
+                        <p className='mt-2 text-gray-300'>Pursuing a Bachelor of Science in Software Engineering.</p>
+                    </div>
+                </section>
+
+                {/* Footer */}
+                <footer className='text-center py-10 text-gray-500 text-sm'>
+                    © {new Date().getFullYear()} Ethan Hancock. Built with Next.js & Tailwind CSS.
+                </footer>
+            </div>
+        </main>
+    );
 }
