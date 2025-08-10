@@ -54,8 +54,8 @@ export default function Home() {
                         I build software.
                     </h2>
                     <p className='max-w-xl text-slate-300/90 text-base md:text-lg'>
-                        I'm a software engineer focused on building accessible, performant, and beautiful web and
-                        backend systems. Currently I'm a senior at Iowa State University and a SWE Intern at Corteva
+                        I&apos;m a software engineer focused on building accessible, performant, and beautiful web and
+                        backend systems. Currently I&apos;m a senior at Iowa State University and a SWE Intern at Corteva
                         Agriscience.
                     </p>
 
@@ -103,7 +103,7 @@ export default function Home() {
                             <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
                                 <li>
                                     Developed <strong>Angular/.NET</strong> Web App for in-house Research Lab to track
-                                    their projects' statuses, results, and other data
+                                    their projects&apos; statuses, results, and other data
                                 </li>
                                 <li>
                                     Optimized .NET endpoint using split queries, cutting average request time by{' '}
