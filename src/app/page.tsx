@@ -55,8 +55,8 @@ export default function Home() {
                     </h2>
                     <p className='max-w-xl text-slate-300/90 text-base md:text-lg'>
                         I&apos;m a software engineer focused on building accessible, performant, and beautiful web and
-                        backend systems. Currently I&apos;m a senior at Iowa State University and a SWE Intern at Corteva
-                        Agriscience.
+                        backend systems. Currently I&apos;m a senior at Iowa State University and a SWE Intern at
+                        Corteva Agriscience.
                     </p>
 
                     <div className='mt-8 flex items-center gap-3'>
@@ -95,15 +95,25 @@ export default function Home() {
                 >
                     <SectionHeading>Experience</SectionHeading>
 
-                    <ol className='relative border-l border-slate-700/60 pl-6 space-y-10'>
-                        <li className='group'>
-                            <span className='absolute -left-2 top-1.5 h-3 w-3 rounded-full bg-[#64ffda] shadow-[0_0_0_4px_rgba(100,255,218,0.15)]' />
+                    <ol
+                        className='relative border-l border-slate-700/60 pl-6 space-y-10
+               [--tl:1.5rem] sm:[--tl:2rem] md:[--tl:2.5rem]'
+                    >
+                        {/* Corteva - highlighted */}
+                        <li className='relative group'>
+                            <span
+                                aria-hidden
+                                className='absolute top-1.5 h-3 w-3 rounded-full
+                   left-[calc(var(--tl)*-1-0.375rem)]
+                   sm:left-[calc(var(--tl)*-1+0.55rem)]
+                   bg-[#64ffda] shadow-[0_0_0_4px_rgba(100,255,218,0.15)]'
+                            />
                             <h3 className='text-xl font-bold'>Software Engineer Intern · Corteva Agriscience</h3>
                             <p className='text-sm text-slate-400'>May 2025 – Aug 2025 · Johnston, IA</p>
                             <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
                                 <li>
                                     Developed <strong>Angular/.NET</strong> Web App for in-house Research Lab to track
-                                    their projects&apos; statuses, results, and other data
+                                    their projects' statuses, results, and other data
                                 </li>
                                 <li>
                                     Optimized .NET endpoint using split queries, cutting average request time by{' '}
@@ -116,8 +126,15 @@ export default function Home() {
                             </ul>
                         </li>
 
-                        <li className='group'>
-                            <span className='absolute -left-2 top-1.5 h-3 w-3 rounded-full bg-[#64ffda] shadow-[0_0_0_4px_rgba(100,255,218,0.15)]' />
+                        {/* John Deere - muted */}
+                        <li className='relative group'>
+                            <span
+                                aria-hidden
+                                className='absolute top-1.5 h-3 w-3 rounded-full
+                   left-[calc(var(--tl)*-1-0.375rem)]
+                   sm:left-[calc(var(--tl)*-1+0.55rem)]
+                   bg-slate-500/50 ring-2 ring-slate-500/20'
+                            />
                             <h3 className='text-xl font-bold'>
                                 Part-Time Student Software Engineer Apprentice · John Deere
                             </h3>
@@ -141,13 +158,20 @@ export default function Home() {
                             </ul>
                         </li>
 
-                        <li className='group'>
-                            <span className='absolute -left-2 top-1.5 h-3 w-3 rounded-full bg-[#64ffda] shadow-[0_0_0_4px_rgba(100,255,218,0.15)]' />
+                        {/* ProMax - muted */}
+                        <li className='relative group'>
+                            <span
+                                aria-hidden
+                                className='absolute top-1.5 h-3 w-3 rounded-full
+                   left-[calc(var(--tl)*-1-0.375rem)]
+                   sm:left-[calc(var(--tl)*-1+0.55rem)]
+                   bg-slate-500/50 ring-2 ring-slate-500/20'
+                            />
                             <h3 className='text-xl font-bold'>Software Engineer Intern · ProMax</h3>
                             <p className='text-sm text-slate-400'>Jan 2020 – Apr 2020 · Bettendorf, IA</p>
                             <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
                                 <li>
-                                    Built a mobile e‑signature app in React Native for secure digital document signing.
+                                    Built a mobile e-signature app in React Native for secure digital document signing.
                                 </li>
                                 <li>Worked within Agile practices to improve iteration speed and task ownership.</li>
                                 <li>
