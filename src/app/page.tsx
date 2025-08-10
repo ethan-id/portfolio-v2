@@ -1,5 +1,6 @@
-import Link from 'next/link';
-import {Github, Linkedin, Instagram} from 'lucide-react';
+'use client';
+
+import {Github, Linkedin, Instagram, ExternalLink} from 'lucide-react';
 
 const projects = [
     {
@@ -36,156 +37,184 @@ const projects = [
 
 export default function Home() {
     return (
-        <div className='flex bg-[#0a192f] text-white min-h-screen font-sans h-screen overflow-hidden'>
+        <div
+            className='flex h-screen min-h-screen overflow-hidden text-white
+      bg-[#0a192f] relative
+      [--dot:rgba(255,255,255,0.05)]
+      before:pointer-events-none before:absolute before:inset-0
+      before:bg-[radial-gradient(var(--dot)_1px,transparent_1px)]
+      before:[background-size:18px_18px]'
+        >
             {/* Hero Section - Sticky Left Column */}
-            <aside className='hidden lg:flex w-1/2 flex-col justify-center items-start px-10 md:px-20 sticky top-0 h-screen overflow-hidden'>
-                <div>
-                    <p className='text-[#64ffda] mb-2 text-sm md:text-base'>Hi, my name is</p>
-                    <h1 className='text-4xl md:text-7xl font-bold text-white mb-4'>Ethan Hancock.</h1>
-                    <h2 className='text-3xl md:text-6xl font-bold text-gray-400 mb-6'>I build software.</h2>
-                    <p className='max-w-xl text-gray-400 text-base md:text-lg'>
+            <aside className='hidden lg:flex w-1/2 shrink-0'>
+                <div className='sticky top-0 h-screen flex flex-col justify-center px-10 xl:px-20'>
+                    <p className='text-[#64ffda] mb-3 text-sm md:text-base tracking-wide'>Hi, my name is</p>
+                    <h1 className='text-4xl md:text-7xl font-bold mb-2 leading-tight'>Ethan Hancock.</h1>
+                    <h2 className='text-3xl md:text-6xl font-semibold text-slate-300 mb-6 leading-tight'>
+                        I build software.
+                    </h2>
+                    <p className='max-w-xl text-slate-300/90 text-base md:text-lg'>
                         I'm a software engineer focused on building accessible, performant, and beautiful web and
                         backend systems. Currently I'm a senior at Iowa State University and a SWE Intern at Corteva
                         Agriscience.
                     </p>
-                    <div className='mt-8 flex space-x-4'>
-                        <a
+
+                    <div className='mt-8 flex items-center gap-3'>
+                        <SocialLink
                             href='https://github.com/ethan-id'
-                            className='text-gray-400 hover:text-[#64ffda]'
-                            target='_blank'
-                            rel='noopener noreferrer'
+                            label='GitHub'
                         >
-                            <Github size={24} />
-                        </a>
-                        <a
+                            <Github size={22} />
+                        </SocialLink>
+                        <SocialLink
                             href='https://www.linkedin.com/in/hancockethan/'
-                            className='text-gray-400 hover:text-[#64ffda]'
-                            target='_blank'
-                            rel='noopener noreferrer'
+                            label='LinkedIn'
                         >
-                            <Linkedin size={24} />
-                        </a>
-                        <a
+                            <Linkedin size={22} />
+                        </SocialLink>
+                        <SocialLink
                             href='https://www.instagram.com/ethan.idfk/'
-                            className='text-gray-400 hover:text-[#64ffda]'
-                            target='_blank'
-                            rel='noopener noreferrer'
+                            label='Instagram'
                         >
-                            <Instagram size={24} />
-                        </a>
+                            <Instagram size={22} />
+                        </SocialLink>
                     </div>
                 </div>
             </aside>
 
             {/* Scrollable Right Column */}
-            <main className='w-full lg:w-1/2 h-screen overflow-y-auto'>
+            <main
+                className='w-full lg:w-1/2 h-screen overflow-y-auto
+        scroll-smooth [scrollbar-width:thin]
+        [scrollbar-color:#64ffda_transparent]'
+            >
                 {/* Experience Section */}
                 <section
                     id='experience'
-                    className='px-10 md:px-20 py-20'
+                    className='px-6 md:px-10 xl:px-20 py-16 md:py-20'
                 >
-                    <h2 className='text-3xl font-semibold text-[#64ffda] mb-6'>Experience</h2>
-                    <div className='space-y-8'>
-                        <div>
-                            <h3 className='text-xl font-bold text-white'>
-                                Software Engineer Intern · Corteva Agriscience
-                            </h3>
-                            <span className='text-sm text-gray-400'>May 2025 – Aug 2025 · Johnston, IA</span>
-                            <p className='mt-2 text-gray-300'>
-                                Incoming Software Engineer Intern at Corteva Agriscience.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 className='text-xl font-bold text-white'>
+                    <SectionHeading>Experience</SectionHeading>
+
+                    <ol className='relative border-l border-slate-700/60 pl-6 space-y-10'>
+                        <li className='group'>
+                            <span className='absolute -left-2 top-1.5 h-3 w-3 rounded-full bg-[#64ffda] shadow-[0_0_0_4px_rgba(100,255,218,0.15)]' />
+                            <h3 className='text-xl font-bold'>Software Engineer Intern · Corteva Agriscience</h3>
+                            <p className='text-sm text-slate-400'>May 2025 – Aug 2025 · Johnston, IA</p>
+                            <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
+                                <li>
+                                    Developed <strong>Angular/.NET</strong> Web App for in-house Research Lab to track
+                                    their projects' statuses, results, and other data
+                                </li>
+                                <li>
+                                    Optimized .NET endpoint using split queries, cutting average request time by{' '}
+                                    <strong>98.08%</strong> (18 seconds to 0.3 seconds)
+                                </li>
+                                <li>
+                                    Built data migration service to migrate over <strong>2,000</strong> previous records
+                                    into new database tables
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li className='group'>
+                            <span className='absolute -left-2 top-1.5 h-3 w-3 rounded-full bg-[#64ffda] shadow-[0_0_0_4px_rgba(100,255,218,0.15)]' />
+                            <h3 className='text-xl font-bold'>
                                 Part-Time Student Software Engineer Apprentice · John Deere
                             </h3>
-                            <span className='text-sm text-gray-400'>May 2021 – May 2025 · Ames, IA</span>
-                            <ul className='mt-2 list-disc list-inside text-gray-300 space-y-1'>
+                            <p className='text-sm text-slate-400'>May 2021 – May 2025 · Ames, IA</p>
+                            <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
                                 <li>
-                                    Engineered a React application to manage 500+ feature toggles, enhancing system
-                                    scalability and developer experience
+                                    Engineered a React app to manage 500+ feature toggles, improving scalability and DX.
                                 </li>
                                 <li>
-                                    Converted legacy CommonJS packages into Federated ES Modules, reducing consumer
-                                    build times by 25%
+                                    Converted legacy CommonJS packages into Federated ES Modules; cut consumer build
+                                    times by 25%.
                                 </li>
                                 <li>
-                                    Refactored a package’s type-safety solution to TypeScript, improving code quality
-                                    and reliability
+                                    Refactored a type-safety solution to TypeScript for better reliability and
+                                    maintainability.
                                 </li>
                                 <li>
-                                    Integrated Java Spring endpoints with an agentic chat-bot using Python and OpenAI’s
-                                    Assistants API
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className='text-xl font-bold text-white'>Software Engineer Intern · ProMax</h3>
-                            <span className='text-sm text-gray-400'>Jan 2020 – Apr 2020 · Bettendorf, IA</span>
-                            <ul className='mt-2 list-disc list-inside text-gray-300 space-y-1'>
-                                <li>
-                                    Developed a mobile e-signature application using React Native for secure digital
-                                    document signing
-                                </li>
-                                <li>
-                                    Followed Agile development practices and methodologies to enhance iteration speed
-                                    and divide tasks
-                                </li>
-                                <li>
-                                    Presented project updates and prototypes to management, demonstrating strong
-                                    communication and leadership as a team lead among six interns
+                                    Integrated Java Spring endpoints with an agentic chatbot using Python + OpenAI
+                                    Assistants API.
                                 </li>
                             </ul>
-                        </div>
-                    </div>
+                        </li>
+
+                        <li className='group'>
+                            <span className='absolute -left-2 top-1.5 h-3 w-3 rounded-full bg-[#64ffda] shadow-[0_0_0_4px_rgba(100,255,218,0.15)]' />
+                            <h3 className='text-xl font-bold'>Software Engineer Intern · ProMax</h3>
+                            <p className='text-sm text-slate-400'>Jan 2020 – Apr 2020 · Bettendorf, IA</p>
+                            <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
+                                <li>
+                                    Built a mobile e‑signature app in React Native for secure digital document signing.
+                                </li>
+                                <li>Worked within Agile practices to improve iteration speed and task ownership.</li>
+                                <li>
+                                    Presented updates and prototypes to leadership; acted as team lead among six
+                                    interns.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
                 </section>
 
                 {/* Projects Section */}
                 <section
                     id='projects'
-                    className='px-10 md:px-20 py-20'
+                    className='px-6 md:px-10 xl:px-20 py-16 md:py-20'
                 >
-                    <h2 className='text-3xl font-semibold text-[#64ffda] mb-6'>Projects</h2>
-                    <div className='grid md:grid-cols-2 gap-8'>
+                    <SectionHeading>Projects</SectionHeading>
+
+                    <div className='grid md:grid-cols-2 gap-6 lg:gap-8'>
                         {projects.map((project) => (
                             <div
                                 key={project.title}
-                                className='bg-[#112240] p-6 rounded-lg shadow-md relative transform transition-transform duration-300 hover:-translate-y-1 hover:translate-x-1'
+                                className='group relative rounded-2xl p-[1px]
+                  bg-gradient-to-br from-[#64ffda]/40 via-slate-700/20 to-transparent
+                  hover:from-[#64ffda]/60 transition-colors'
                             >
-                                <h3 className='text-xl font-semibold text-white'>{project.title}</h3>
-                                <p className='text-gray-300 my-2'>{project.description}</p>
-                                <div className='absolute bottom-4 right-4 flex space-x-4'>
-                                    {project.link && (
+                                <div
+                                    className='rounded-2xl h-full bg-[#112240]/90 p-6
+                  shadow-[0_8px_30px_rgba(0,0,0,0.3)]
+                  backdrop-blur-sm
+                  motion-safe:transition
+                  motion-safe:duration-300
+                  motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:translate-x-1'
+                                >
+                                    <h3 className='text-lg md:text-xl font-semibold'>{project.title}</h3>
+                                    <p className='text-slate-300 mt-2 mb-10'>{project.description}</p>
+
+                                    <div className='absolute bottom-4 right-4 flex items-center gap-3'>
+                                        {'link' in project && project.link && (
+                                            <a
+                                                href={project.link}
+                                                target='_blank'
+                                                rel='noopener noreferrer'
+                                                aria-label={`Open ${project.title}`}
+                                                className='text-[#64ffda] hover:text-white focus-visible:outline-none
+                          focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2
+                          focus-visible:ring-offset-[#0a192f] rounded-md
+                          motion-safe:transition motion-safe:duration-200 motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5'
+                                            >
+                                                <ExternalLink size={20} />
+                                                <span className='sr-only'>External link</span>
+                                            </a>
+                                        )}
                                         <a
-                                            href={project.link}
-                                            className='text-[#64ffda] hover:text-white'
+                                            href={project.githubLink}
                                             target='_blank'
                                             rel='noopener noreferrer'
+                                            aria-label={`GitHub repo for ${project.title}`}
+                                            className='text-[#64ffda] hover:text-white focus-visible:outline-none
+                        focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2
+                        focus-visible:ring-offset-[#0a192f] rounded-md
+                        motion-safe:transition motion-safe:duration-200'
                                         >
-                                            <svg
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                className='h-5 w-5'
-                                                fill='none'
-                                                viewBox='0 0 24 24'
-                                                stroke='currentColor'
-                                            >
-                                                <path
-                                                    strokeLinecap='round'
-                                                    strokeLinejoin='round'
-                                                    strokeWidth={2}
-                                                    d='M14 3h7m0 0v7m0-7L10 14'
-                                                />
-                                            </svg>
+                                            <Github size={20} />
+                                            <span className='sr-only'>GitHub</span>
                                         </a>
-                                    )}
-                                    <a
-                                        href={project.githubLink}
-                                        className='text-[#64ffda] hover:text-white'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                    >
-                                        <Github size={20} />
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -195,23 +224,48 @@ export default function Home() {
                 {/* Education Section */}
                 <section
                     id='education'
-                    className='px-10 md:px-20 py-20'
+                    className='px-6 md:px-10 xl:px-20 py-16 md:py-20'
                 >
-                    <h2 className='text-3xl font-semibold text-[#64ffda] mb-6'>Education</h2>
-                    <div>
-                        <h3 className='text-xl font-bold text-white'>
-                            B.S. Software Engineering · Iowa State University
-                        </h3>
-                        <span className='text-sm text-gray-400'>Aug 2021 – Dec 2025</span>
-                        <p className='mt-2 text-gray-300'>Pursuing a Bachelor of Science in Software Engineering.</p>
+                    <SectionHeading>Education</SectionHeading>
+                    <div className='rounded-xl border border-slate-700/50 bg-[#112240]/70 p-6 shadow-lg'>
+                        <h3 className='text-xl font-bold'>B.S. Software Engineering · Iowa State University</h3>
+                        <p className='text-sm text-slate-400'>Aug 2021 – Dec 2025</p>
+                        <p className='mt-2 text-slate-300'>Pursuing a Bachelor of Science in Software Engineering.</p>
                     </div>
                 </section>
 
                 {/* Footer */}
-                <footer className='text-center py-10 text-gray-500 text-sm'>
+                <footer className='text-center py-10 text-slate-400 text-sm'>
                     © {new Date().getFullYear()} Ethan Hancock. Built with Next.js & Tailwind CSS.
                 </footer>
             </main>
         </div>
+    );
+}
+
+function SectionHeading({children}: {children: React.ReactNode}) {
+    return (
+        <h2 className='text-2xl md:text-3xl font-semibold mb-8 tracking-tight flex items-center gap-3'>
+            <span className='h-6 w-1 rounded bg-[#64ffda]' />
+            <span className='text-[#64ffda]'>{children}</span>
+        </h2>
+    );
+}
+
+function SocialLink({href, label, children}: {href: string; label: string; children: React.ReactNode}) {
+    return (
+        <a
+            href={href}
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label={label}
+            className='inline-flex items-center justify-center rounded-lg border border-slate-700/60
+        bg-[#0f2146]/50 p-2 text-slate-300 hover:text-white hover:border-[#64ffda]/60
+        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2
+        focus-visible:ring-offset-[#0a192f]
+        motion-safe:transition motion-safe:duration-200 motion-safe:hover:-translate-y-0.5'
+        >
+            {children}
+        </a>
     );
 }
