@@ -38,16 +38,19 @@ const projects = [
 export default function Home() {
     return (
         <div
-            className='flex h-screen min-h-screen overflow-hidden text-white
-      bg-[#0a192f] relative
-      [--dot:rgba(255,255,255,0.05)]
-      before:pointer-events-none before:absolute before:inset-0
-      before:bg-[radial-gradient(var(--dot)_1px,transparent_1px)]
-      before:[background-size:18px_18px]'
+            className='flex flex-col lg:flex-row lg:h-screen text-white
+                 bg-[#0a192f] relative overflow-x-hidden
+                 [--dot:rgba(255,255,255,0.05)]
+                 before:pointer-events-none before:absolute before:inset-0
+                 before:bg-[radial-gradient(var(--dot)_1px,transparent_1px)]
+                 before:[background-size:18px_18px]'
         >
-            {/* Hero Section - Sticky Left Column */}
-            <aside className='hidden lg:flex w-1/2 shrink-0'>
-                <div className='sticky top-0 h-screen flex flex-col justify-center px-10 xl:px-20'>
+            {/* Hero Section — visible on mobile, sticky on lg+ */}
+            <aside className='block lg:flex w-full lg:w-1/2 shrink-0'>
+                <div
+                    className='lg:sticky lg:top-0 lg:h-screen h-auto px-6 md:px-10 xl:px-20 py-12 lg:py-0
+                        flex flex-col justify-center'
+                >
                     <p className='text-[#64ffda] mb-3 text-sm md:text-base tracking-wide'>Hi, my name is</p>
                     <h1 className='text-4xl md:text-7xl font-bold mb-2 leading-tight'>Ethan Hancock.</h1>
                     <h2 className='text-3xl md:text-6xl font-semibold text-slate-300 mb-6 leading-tight'>
@@ -82,16 +85,17 @@ export default function Home() {
                 </div>
             </aside>
 
-            {/* Scrollable Right Column */}
+            {/* Scrollable Right Column — isolated scroll only on lg+ */}
             <main
-                className='w-full lg:w-1/2 h-screen overflow-y-auto
-        scroll-smooth [scrollbar-width:thin]
-        [scrollbar-color:#64ffda_transparent]'
+                className='w-full lg:w-1/2
+                   lg:h-screen lg:overflow-y-auto
+                   scroll-smooth [scrollbar-width:thin]
+                   [scrollbar-color:#64ffda_transparent]'
             >
-                {/* Experience Section */}
+                {/* Experience */}
                 <section
                     id='experience'
-                    className='px-6 md:px-10 xl:px-20 py-16 md:py-20'
+                    className='mt-2 px-6 md:px-10 xl:px-20 py-12 md:py-20'
                 >
                     <SectionHeading>Experience</SectionHeading>
 
@@ -113,7 +117,7 @@ export default function Home() {
                             <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
                                 <li>
                                     Developed <strong>Angular/.NET</strong> Web App for in-house Research Lab to track
-                                    their projects&apos; statuses, results, and other data
+                                    their projects' statuses, results, and other data
                                 </li>
                                 <li>
                                     Optimized .NET endpoint using split queries, cutting average request time by{' '}
@@ -171,7 +175,7 @@ export default function Home() {
                             <p className='text-sm text-slate-400'>Jan 2020 – Apr 2020 · Bettendorf, IA</p>
                             <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
                                 <li>
-                                    Built a mobile e-signature app in React Native for secure digital document signing.
+                                    Built a mobile e‑signature app in React Native for secure digital document signing.
                                 </li>
                                 <li>Worked within Agile practices to improve iteration speed and task ownership.</li>
                                 <li>
@@ -183,7 +187,7 @@ export default function Home() {
                     </ol>
                 </section>
 
-                {/* Projects Section */}
+                {/* Projects */}
                 <section
                     id='projects'
                     className='px-6 md:px-10 xl:px-20 py-16 md:py-20'
@@ -195,16 +199,16 @@ export default function Home() {
                             <div
                                 key={project.title}
                                 className='group relative rounded-2xl p-[1px]
-                  bg-gradient-to-br from-[#64ffda]/40 via-slate-700/20 to-transparent
-                  hover:from-[#64ffda]/60 transition-colors'
+                           bg-gradient-to-br from-[#64ffda]/40 via-slate-700/20 to-transparent
+                           hover:from-[#64ffda]/60 transition-colors'
                             >
                                 <div
                                     className='rounded-2xl h-full bg-[#112240]/90 p-6
-                  shadow-[0_8px_30px_rgba(0,0,0,0.3)]
-                  backdrop-blur-sm
-                  motion-safe:transition
-                  motion-safe:duration-300
-                  motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:translate-x-1'
+                             shadow-[0_8px_30px_rgba(0,0,0,0.3)]
+                             backdrop-blur-sm
+                             motion-safe:transition
+                             motion-safe:duration-300
+                             motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:translate-x-1'
                                 >
                                     <h3 className='text-lg md:text-xl font-semibold'>{project.title}</h3>
                                     <p className='text-slate-300 mt-2 mb-10'>{project.description}</p>
@@ -217,9 +221,9 @@ export default function Home() {
                                                 rel='noopener noreferrer'
                                                 aria-label={`Open ${project.title}`}
                                                 className='text-[#64ffda] hover:text-white focus-visible:outline-none
-                          focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2
-                          focus-visible:ring-offset-[#0a192f] rounded-md
-                          motion-safe:transition motion-safe:duration-200 motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5'
+                                   focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2
+                                   focus-visible:ring-offset-[#0a192f] rounded-md
+                                   motion-safe:transition motion-safe:duration-200 motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5'
                                             >
                                                 <ExternalLink size={20} />
                                                 <span className='sr-only'>External link</span>
@@ -231,9 +235,9 @@ export default function Home() {
                                             rel='noopener noreferrer'
                                             aria-label={`GitHub repo for ${project.title}`}
                                             className='text-[#64ffda] hover:text-white focus-visible:outline-none
-                        focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2
-                        focus-visible:ring-offset-[#0a192f] rounded-md
-                        motion-safe:transition motion-safe:duration-200'
+                                 focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2
+                                 focus-visible:ring-offset-[#0a192f] rounded-md
+                                 motion-safe:transition motion-safe:duration-200'
                                         >
                                             <Github size={20} />
                                             <span className='sr-only'>GitHub</span>
@@ -245,7 +249,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Education Section */}
+                {/* Education */}
                 <section
                     id='education'
                     className='px-6 md:px-10 xl:px-20 py-16 md:py-20'
@@ -284,10 +288,10 @@ function SocialLink({href, label, children}: {href: string; label: string; child
             rel='noopener noreferrer'
             aria-label={label}
             className='inline-flex items-center justify-center rounded-lg border border-slate-700/60
-        bg-[#0f2146]/50 p-2 text-slate-300 hover:text-white hover:border-[#64ffda]/60
-        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2
-        focus-visible:ring-offset-[#0a192f]
-        motion-safe:transition motion-safe:duration-200 motion-safe:hover:-translate-y-0.5'
+                 bg-[#0f2146]/50 p-2 text-slate-300 hover:text-white hover:border-[#64ffda]/60
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#64ffda] focus-visible:ring-offset-2
+                 focus-visible:ring-offset-[#0a192f]
+                 motion-safe:transition motion-safe:duration-200 motion-safe:hover:-translate-y-0.5'
         >
             {children}
         </a>
