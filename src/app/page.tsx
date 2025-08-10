@@ -117,7 +117,7 @@ export default function Home() {
                             <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
                                 <li>
                                     Developed <strong>Angular/.NET</strong> Web App for in-house Research Lab to track
-                                    their projects' statuses, results, and other data
+                                    their projects&apos; statuses, results, and other data
                                 </li>
                                 <li>
                                     Optimized .NET endpoint using split queries, cutting average request time by{' '}
