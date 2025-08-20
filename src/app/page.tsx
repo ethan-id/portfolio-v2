@@ -103,7 +103,20 @@ export default function Home() {
                         className='relative border-l border-slate-700/60 pl-6 space-y-10
                [--tl:1.5rem] sm:[--tl:2rem] md:[--tl:2.5rem]'
                     >
-                        {/* Corteva - highlighted */}
+                        {/* Corteva Full Time */}
+                        <li className='relative group'>
+                            <span
+                                aria-hidden
+                                className='absolute top-1.5 h-3 w-3 rounded-full
+                   left-[calc(var(--tl)*-1-0.375rem)]
+                   sm:left-[calc(var(--tl)*-1+0.55rem)]
+                   bg-slate-500/50 ring-2 ring-slate-500/20'
+                            />
+                            <h3 className='text-xl font-bold'>Incoming Software Engineer · Corteva Agriscience</h3>
+                            <p className='text-sm text-slate-400'>Dec 2025 · Johnston, IA</p>
+                        </li>
+
+                        {/* Corteva Part Time */}
                         <li className='relative group'>
                             <span
                                 aria-hidden
@@ -111,6 +124,19 @@ export default function Home() {
                    left-[calc(var(--tl)*-1-0.375rem)]
                    sm:left-[calc(var(--tl)*-1+0.55rem)]
                    bg-[#64ffda] shadow-[0_0_0_4px_rgba(100,255,218,0.15)]'
+                            />
+                            <h3 className='text-xl font-bold'>Incoming Part-Time Software Engineer · Corteva Agriscience</h3>
+                            <p className='text-sm text-slate-400'>Sep 2025 – Dec 2025 · Remote</p>
+                        </li>
+
+                        {/* Corteva Internship */}
+                        <li className='relative group'>
+                            <span
+                                aria-hidden
+                                className='absolute top-1.5 h-3 w-3 rounded-full
+                   left-[calc(var(--tl)*-1-0.375rem)]
+                   sm:left-[calc(var(--tl)*-1+0.55rem)]
+                   bg-slate-500/50 ring-2 ring-slate-500/20'
                             />
                             <h3 className='text-xl font-bold'>Software Engineer Intern · Corteva Agriscience</h3>
                             <p className='text-sm text-slate-400'>May 2025 – Aug 2025 · Johnston, IA</p>
