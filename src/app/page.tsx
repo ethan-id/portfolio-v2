@@ -51,6 +51,7 @@ export default function Home() {
                     className='lg:sticky lg:top-0 lg:h-screen h-auto px-6 md:px-10 xl:px-20 py-12 lg:py-0
                         flex flex-col justify-center'
                 >
+                    <img src='/me.png' alt='Ethan Hancock' className='w-80 h-auto rounded-4xl mb-6 shadow-lg' />
                     <p className='text-[#64ffda] mb-3 text-sm md:text-base tracking-wide'>Hi, my name is</p>
                     <h1 className='text-4xl md:text-7xl font-bold mb-2 leading-tight'>Ethan Hancock.</h1>
                     <h2 className='text-3xl md:text-6xl font-semibold text-slate-300 mb-6 leading-tight'>
