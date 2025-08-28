@@ -124,7 +124,7 @@ export default function Home() {
                    sm:left-[calc(var(--tl)*-1+0.55rem)]
                    bg-[#64ffda] shadow-[0_0_0_4px_rgba(100,255,218,0.15)]'
                             />
-                            <h3 className='text-xl font-bold'>Incoming Part-Time Software Engineer · Corteva Agriscience</h3>
+                            <h3 className='text-xl font-bold'>Part-Time Software Engineer · Corteva Agriscience</h3>
                             <p className='text-sm text-slate-400'>Sep 2025 – Dec 2025 · Remote</p>
                         </li>
 
