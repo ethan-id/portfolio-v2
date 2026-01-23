@@ -58,7 +58,7 @@ export default function Home() {
                         I build software.
                     </h2>
                     <p className='max-w-xl text-slate-300/90 text-base md:text-lg'>
-                        I am a software engineer focused on building usable, performant, and beautiful web apps and backend systems. Currently I&apos;m a senior at Iowa State University and a Part Time SWE  at Corteva Agriscience.
+                        I am a software engineer focused on building usable, performant, and beautiful web apps and backend systems. Currently I&apos;m a Software Engineer I at Corteva Agriscience.
                     </p>
 
                     <div className='mt-8 flex items-center gap-3'>
@@ -283,7 +283,6 @@ export default function Home() {
                     <div className='rounded-xl border border-slate-700/50 bg-[#112240]/70 p-6 shadow-lg'>
                         <h3 className='text-xl font-bold'>B.S. Software Engineering · Iowa State University</h3>
                         <p className='text-sm text-slate-400'>Aug 2021 – Dec 2025</p>
-                        <p className='mt-2 text-slate-300'>Pursuing a Bachelor of Science in Software Engineering.</p>
                     </div>
                 </section>
 
