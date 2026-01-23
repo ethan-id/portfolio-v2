@@ -109,9 +109,9 @@ export default function Home() {
                                 className='absolute top-1.5 h-3 w-3 rounded-full
                    left-[calc(var(--tl)*-1-0.375rem)]
                    sm:left-[calc(var(--tl)*-1+0.55rem)]
-                   bg-slate-500/50 ring-2 ring-slate-500/20'
+                   bg-[#64ffda] shadow-[0_0_0_4px_rgba(100,255,218,0.15)]'
                             />
-                            <h3 className='text-xl font-bold'>Incoming Software Engineer · Corteva Agriscience</h3>
+                            <h3 className='text-xl font-bold'>Software Engineer I · Corteva Agriscience</h3>
                             <p className='text-sm text-slate-400'>Dec 2025 · Johnston, IA</p>
                         </li>
 
@@ -122,10 +122,10 @@ export default function Home() {
                                 className='absolute top-1.5 h-3 w-3 rounded-full
                    left-[calc(var(--tl)*-1-0.375rem)]
                    sm:left-[calc(var(--tl)*-1+0.55rem)]
-                   bg-[#64ffda] shadow-[0_0_0_4px_rgba(100,255,218,0.15)]'
+                   bg-slate-500/50 ring-2 ring-slate-500/20'
                             />
                             <h3 className='text-xl font-bold'>Part-Time Software Engineer · Corteva Agriscience</h3>
-                            <p className='text-sm text-slate-400'>Sep 2025 – Dec 2025 · Remote</p>
+                            <p className='text-sm text-slate-400'>Sep 2025 – Dec 2025 · Remote (Contract w/ QCI Inc.)</p>
                         </li>
 
                         {/* Corteva Internship */}
