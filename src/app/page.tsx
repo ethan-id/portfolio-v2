@@ -10,7 +10,6 @@ const projects = [
     },
     {
         title: 'Find Your Park',
-        link: 'https://www.find-your-park.com/',
         description: 'Explore all National Parks designated by the National Park Services.',
         githubLink: 'https://github.com/ethan-id/find-your-park'
     },
