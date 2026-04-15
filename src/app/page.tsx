@@ -112,6 +112,15 @@ export default function Home() {
                             />
                             <h3 className='text-xl font-bold'>Software Engineer I · Corteva Agriscience</h3>
                             <p className='text-sm text-slate-400'>Dec 2025 · Johnston, IA</p>
+                            <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
+                                <li>Brought a full-stack Angular/.NET app from 0-1 to automate a previously manual ordering process</li>
+                                <li>Optimized .NET API's most hit endpoint, reducing average request duration by <strong>98.4%</strong> (4m10s to 4s)</li>
+                                <li>Lowered SQL Server hosting costs by <strong>79.6%</strong> by enabling auto-pausing and building a service to manage uptime</li>
+                                <li>Reduced UI bundle size by <strong>84%</strong>, improving lighthouse metrics, LCP time, and initial page load time</li>
+                                <li>Built an <strong>Azure DevOps</strong> pipeline for building, linting, testing, and deploying the multi-environment web app</li>
+                                <li>Migrated four applications from Angular 17 to 20 and .NET 8 to 10</li>
+                                <li>Architected an Azure Service Bus implementation to sync data between three applications</li>
+                            </ul>
                         </li>
 
                         {/* Corteva Part Time */}
@@ -125,6 +134,11 @@ export default function Home() {
                             />
                             <h3 className='text-xl font-bold'>Part-Time Software Engineer · Corteva Agriscience</h3>
                             <p className='text-sm text-slate-400'>Sep 2025 – Dec 2025 · Remote (Contract w/ QCI Inc.)</p>
+                            <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
+                                <li>Developed Angular UI and .NET backend services to process external data sources, enabling autmated event generation</li>
+                                <li>Build an Excel-based report generation/validation tool, reducing manual work and improving data accuracy</li>
+                                <li>Increased average sprint velocity (measured in story points) by 27% over 4 sprints</li>
+                            </ul>
                         </li>
 
                         {/* Corteva Internship */}
