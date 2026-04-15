@@ -134,6 +134,11 @@ export default function Home() {
                             />
                             <h3 className='text-xl font-bold'>Part-Time Software Engineer · Corteva Agriscience</h3>
                             <p className='text-sm text-slate-400'>Sep 2025 – Dec 2025 · Remote (Contract w/ QCI Inc.)</p>
+                            <ul className='mt-3 space-y-2 text-slate-300 list-disc pl-4'>
+                                <li>Developed Angular UI and .NET backend services to process external data sources, enabling autmated event generation</li>
+                                <li>Build an Excel-based report generation/validation tool, reducing manual work and improving data accuracy</li>
+                                <li>Increased average sprint velocity (measured in story points) by 27% over 4 sprints</li>
+                            </ul>
                         </li>
 
                         {/* Corteva Internship */}
