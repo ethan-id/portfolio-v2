@@ -2,6 +2,8 @@
 
 import {Github, Linkedin, Instagram, ExternalLink} from 'lucide-react';
 
+// TODO: Add photography page/route
+
 const projects = [
     {
         title: 'Machine Learning on the Edge',
